@@ -63,10 +63,10 @@ export function {{classname}}FromJSONTyped(json: any, ignoreDiscriminator: boole
         {{#vars}}
         {{#isPrimitiveType}}
         {{#isDate}}
-        '{{name}}': {{^required}}!exists(json, '{{baseName}}') ? undefined : {{/required}}({{#isNullable}}json['{{baseName}}'] === null ? null : {{/isNullable}}new Date(json['{{baseName}}'])),
+        '{{name}}': {{^required}}!exists(json, '{{baseName}}') ? undefined : {{/required}}({{#isNullable}}json['{{baseName}}'] === null ? null : {{/isNullable}}json['{{baseName}}']),
         {{/isDate}}
         {{#isDateTime}}
-        '{{name}}': {{^required}}!exists(json, '{{baseName}}') ? undefined : {{/required}}({{#isNullable}}json['{{baseName}}'] === null ? null : {{/isNullable}}new Date(json['{{baseName}}'])),
+        '{{name}}': {{^required}}!exists(json, '{{baseName}}') ? undefined : {{/required}}({{#isNullable}}json['{{baseName}}'] === null ? null : {{/isNullable}}json['{{baseName}}']),
         {{/isDateTime}}
         {{^isDate}}
         {{^isDateTime}}
